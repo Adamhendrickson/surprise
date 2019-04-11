@@ -1,0 +1,88 @@
+<head>
+    <!-- http://www.justinaguilar.com/animations/-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 10px auto;
+            font-family: sans-serif;
+        }
+        
+        #object{
+	visibility: hidden;
+}
+ 
+  #button {
+            opacity: 0;
+      position: fixed;
+    top: 500px;
+    left: 195px;
+        }
+        
+        #button:hover {
+            opacity: 100;
+            cursor: pointer;
+        }
+        
+        h1 {
+            width: 50%;
+            text-align: center;
+            margin: auto;
+            margin-top: 50px;
+            font-size: 45px;
+            color: gray;
+            
+        }
+        #gender{
+           visibility: hidden;
+            width: 50%;
+            margin: 80px auto;
+            text-align: center;
+}
+        h2{
+        font-size: 100px;
+            color: #298ccb;
+            text-align: center;}
+        
+        img {margin-top: -50px;}
+        
+        p{
+           width: 50%;
+            text-align: center;
+            margin: 10px auto; 
+            color: grey;
+        }
+       
+        </style>
+</head>
+<body>
+    
+    <h1  id="object" class="slideRight">Wanna know a secret?</h1>
+    <p id="object" class="slideLeft">Click on the hidden picture.</p>
+    <div id="gender">
+        <h2 >It's a Boy!</h2>
+    <img width="200px" height="auto" src="Boy%20or%20girl_.png">
+      </div>
+<img id="button" onclick="genderReveal()" src="boy.png">
+    <audio id="audio" src="eye.mp3"></audio>
+    
+<script>
+    
+    
+    function genderReveal() {
+        var audio = document.getElementById("audio");
+       audio.play();
+        setTimeout("reveal()", 9700);
+        setTimeout("unreveal()", 10700);
+        setTimeout("reveal()", 11700);
+  
+}
+    function reveal(){
+        document.getElementById('gender').style.visibility = "visible";
+        
+    }
+     function unreveal(){
+        document.getElementById('gender').style.visibility = "hidden";
+        
+    }
+</script>
+</body>
